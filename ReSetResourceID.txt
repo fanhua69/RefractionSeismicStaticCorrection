@@ -1,0 +1,52 @@
+    Sub AssignResourceIDToSelection()
+        Dim msg As String
+        Dim nCurResourceID As Integer
+
+        msg = InputBox("Enter The Resource ID to start From:")
+        'TypeOfFile = FileType(ActiveDocument)
+
+        'If TypeOfFile <> dsCPP Then
+        'MsgBox("File Must be of type .c .cpp")
+        'Else
+        If msg <> "" Then
+            If IsNumeric(msg) Then
+                nCurResourceID = Int(msg)
+                AssignGivenResourceIDToSelection(nCurResourceID)
+            End If
+        Else
+            MsgBox(" You Must Enter a resource ID, Aborting")
+        End If
+        'End If
+    End Sub
+
+    ' This Function can be integrated with other macros to
+    ' automate the renumbering of resource ID's
+
+    Function AssignGivenResourceIDToSelection(ByVal nCurResourceID)
+        Dim nStartLine, nEndLine As Integer
+        Dim i As Integer
+
+        nStartLine = ActiveDocument.Selection.TopLine
+        nEndLine = ActiveDocument.Selection.BottomLine
+
+        ' Debugging massageBox
+        ' MsgBox "Start:"+CStr(nStartLine)+" End:"+CStr(nEndLine)
+        For i = nStartLine To nEndLine
+            ActiveDocument.Selection.GoToLine(i)
+            ActiveDocument.Selection.FindText("#define")  ' //, dsMatchForward)
+            If ActiveDocument.Selection.CurrentLine = i Then
+                ActiveDocument.Selection.EndOfLine()
+                ActiveDocument.Selection.WordLeft(True)
+                ActiveDocument.Selection.Text = nCurResourceID
+
+                nCurResourceID = nCurResourceID + 1
+            End If
+        Next
+    End Function
+
+    Sub TemporaryMacro()
+        DTE.ActiveDocument.Selection.LineDown(False, 4)
+        DTE.ActiveDocument.Selection.EndOfLine()
+        DTE.ActiveDocument.Selection.WordLeft(True)
+        DTE.ActiveDocument.Selection.Text = "1200"
+    End Sub

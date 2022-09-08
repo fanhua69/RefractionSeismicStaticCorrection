@@ -1,0 +1,6 @@
+; RefStatic.def : Declares the module parameters for the DLL.
+
+; LIBRARY      "RefStatic"
+
+EXPORTS
+    ; Explicit exports can go here

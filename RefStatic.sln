@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RefStatic", "RefStatic.vcproj", "{DA7C0AF3-6D52-493E-821E-A02394F7B992}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SeisBase", "..\SeisBase\SeisBase.vcproj", "{ADE4B3F1-94A0-4542-BD1C-3FCEC24E4194}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{DA7C0AF3-6D52-493E-821E-A02394F7B992}.Debug.ActiveCfg = Debug|Win32
+		{DA7C0AF3-6D52-493E-821E-A02394F7B992}.Debug.Build.0 = Debug|Win32
+		{DA7C0AF3-6D52-493E-821E-A02394F7B992}.Release.ActiveCfg = Release|Win32
+		{DA7C0AF3-6D52-493E-821E-A02394F7B992}.Release.Build.0 = Release|Win32
+		{ADE4B3F1-94A0-4542-BD1C-3FCEC24E4194}.Debug.ActiveCfg = Debug|Win32
+		{ADE4B3F1-94A0-4542-BD1C-3FCEC24E4194}.Debug.Build.0 = Debug|Win32
+		{ADE4B3F1-94A0-4542-BD1C-3FCEC24E4194}.Release.ActiveCfg = Release|Win32
+		{ADE4B3F1-94A0-4542-BD1C-3FCEC24E4194}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
